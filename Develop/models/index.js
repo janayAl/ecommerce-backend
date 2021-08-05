@@ -18,7 +18,7 @@ as: 'product_category'
 
 // Categories have many Products
 
-Category.belongsToMany(Product, {
+Category.hasMany(Product, {
   // Define the third table needed to store the foreign keys
   through: {
     model: Product,

@@ -49,6 +49,13 @@ router.get('/', (req, res) => {
 
 
   // update a category by its `id` value
+ 
+  // router.put('/', (req, res) => {   which one to use? and could we still use asyn?
+  //Category.update(req.body, {
+  //   where: {
+  //     id: req.params.id,
+  //   },
+  // })
   router.put('/', async (req, res) => {
     try {
       const categoryData = await Category.findByPk(req.body);

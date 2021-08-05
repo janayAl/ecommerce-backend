@@ -39,7 +39,8 @@ router.get('/:id', (req, res) => {
 
 // create new product
 router.post('/', (req, res) => {
-  /* req.body should look like this...
+  /* req.body should look like this...              body parsing middleware?
+                                                  app.use(bodyParser.text({type 'text/html/}))
     {
       product_name: "Basketball",
       price: 200.00,
@@ -47,6 +48,23 @@ router.post('/', (req, res) => {
       tagIds: [1, 2, 3, 4]
     }
   */
+ //or this way...
+
+  //   Product.create({
+  //     product_name: "Basketball",
+  //     price: "200,000",
+  //    stock: 3,
+  //    tagIds: [1,2,3,4]
+  //   })
+  //     .then((newProduct) => {
+  //       // Send the newly created row as a JSON object
+  //       res.json(newProduct);
+  //     })
+  //     .catch((err) => {
+  //       res.json(err);
+  //     });
+  // });
+    
 
     router.post('/', async (req, res) => {
       try {
